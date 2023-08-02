@@ -1,12 +1,20 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { posts } from "@/data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Post from "@/components/Post";
+import Pagination from "@/components/Pagination";
 
 export default function Home() {
   const [page, setPage] = useState(1);
-  const [myPosts, setMyPosts] = useState(posts.slice((page - 1) * 4, 4));
+  const [myPosts, setMyPosts] = useState(
+    posts.slice((page - 1) * 4, (page - 1) * 4 + 4)
+  );
+  const numOfPages = Math.ceil(posts.length / 4);
+
+  useEffect(() => {
+    setMyPosts(posts.slice((page - 1) * 4, (page - 1) * 4 + 4));
+  }, [page]);
 
   return (
     <>
@@ -22,6 +30,7 @@ export default function Home() {
             return <Post key={post.id} post={post} />;
           })}
         </div>
+        <Pagination page={page} setPage={setPage} numOfPages={numOfPages} />
       </main>
     </>
   );

@@ -4,6 +4,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -26,6 +27,7 @@ html {
   --primary-color: #ff4c60;
   --shadow-1: 4px 4px 0px -3px rgba(51, 51, 51, 0.75);
   --shadow-2: 6px 6px 0px -3px rgba(51, 51, 51, 0.75);
+  --radius: 1rem;
 }
 
 body {
@@ -35,10 +37,11 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 97%;
   max-width: 1200px;
   margin: 0 auto;
   padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .page-wrapper {
@@ -48,6 +51,40 @@ body {
 
 main {
   flex-grow: 1;
-  /* flex-shrink: 0; */
   padding-bottom: 8rem;
+}
+
+.pagination_bar {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.pagination_bar button {
+  width: 100px;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--font-color);
+  border-bottom: 3px solid var(--font-color);
+  border-right: 3px solid var(--font-color);
+  border-radius: 3rem;
+}
+.pagination_bar button:hover {
+  border-bottom: 1px solid var(--font-color);
+  border-right: 1px solid var(--font-color);
+}
+button {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 980px) {
+  p {
+    font-size: 0.9rem;
+  }
+  .page-wrapper {
+    gap: 1rem;
+  }
 }
