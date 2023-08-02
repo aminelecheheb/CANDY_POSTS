@@ -1,7 +1,13 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
+import { posts } from "@/data";
+import { useState } from "react";
+import Post from "@/components/Post";
 
 export default function Home() {
+  const [page, setPage] = useState(1);
+  const [myPosts, setMyPosts] = useState(posts.slice((page - 1) * 4, 4));
+
   return (
     <>
       <Head>
@@ -10,7 +16,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main></main>
+      <main>
+        <div className={styles.posts}>
+          {myPosts.map((post) => {
+            return <Post key={post.id} post={post} />;
+          })}
+        </div>
+      </main>
     </>
   );
 }

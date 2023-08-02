@@ -1,0 +1,97 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.post {
+  background-color: var(--background-color-2);
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--font-color);
+  border-radius: 3rem;
+  transition-duration: 200ms;
+  transform-origin: bottom right;
+}
+
+.post:hover {
+  /* transform: scale(1.01); */
+  margin: -2px -2px;
+  box-shadow: var(--shadow-2);
+  -webkit-box-shadow: var(--shadow-2);
+  -moz-box-shadow: var(--shadow-2);
+}
+/* .post:hover .post_img_container {
+  transform: scale(1.02);
+} */
+
+.background_color_2 {
+  background-color: var(--background-color-2);
+}
+.background_color_3 {
+  background-color: var(--background-color-3) !important;
+}
+.background_color_4 {
+  background-color: var(--background-color-4);
+}
+.background_color_5 {
+  background-color: var(--background-color-5);
+}
+.post_img_container {
+  position: relative;
+  flex-basis: 40%;
+  flex-shrink: 0;
+  min-height: 300px;
+  height: 100%;
+  border: 1px solid var(--font-color);
+  border-radius: 3rem;
+  overflow: hidden;
+  transition-duration: 200ms;
+}
+.post_img_container .img {
+  object-fit: cover;
+}
+.post_infos {
+  /* flex-shrink: 0; */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.post_head {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.post_head .category {
+  background-color: var(--white);
+  padding: 0.2rem 1rem;
+  font-weight: 600;
+  border-radius: 3rem;
+  border: 1px solid var(--font-color);
+}
+
+.post_body h1 {
+  margin-bottom: 0.4rem;
+}
+
+.post_footer button {
+  border: 1px solid var(--font-color);
+  background-color: var(--white);
+  padding: 0.8rem 1.6rem;
+  border-radius: 3rem;
+  box-shadow: var(--shadow-2);
+  -webkit-box-shadow: var(--shadow-2);
+  -moz-box-shadow: var(--shadow-2);
+  transition-duration: 300ms;
+  margin: -2px -2px;
+}
+
+.post_footer button:hover {
+  margin: 0;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
