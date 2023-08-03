@@ -11,6 +11,7 @@ const initialState = {
 const AppContext = React.createContext<ContextType>({
   state: initialState,
   setPage: () => {},
+  setMyPosts: () => {},
 });
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
@@ -20,8 +21,12 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
     dispatch({ type: "SET_PAGE", payload: page });
   };
 
+  const setMyPosts = (posts: PostType[]) => {
+    dispatch({ type: "SET_MY_POSTS", payload: posts });
+  };
+
   return (
-    <AppContext.Provider value={{ state, setPage }}>
+    <AppContext.Provider value={{ state, setPage, setMyPosts }}>
       {children}
     </AppContext.Provider>
   );

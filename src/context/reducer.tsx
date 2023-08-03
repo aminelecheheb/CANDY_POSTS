@@ -5,6 +5,11 @@ const reducer = (state: StateType, action: ActionType) => {
         ...state,
         page: action.payload,
       };
+    case "SET_MY_POSTS":
+      return {
+        ...state,
+        myPosts: action.payload,
+      };
 
     default:
       return state;

@@ -7,11 +7,11 @@ import Pagination from "@/components/Pagination";
 import { useGlobalContext } from "@/context/appContext";
 
 export default function Home() {
-  const { state } = useGlobalContext();
-  const { page, limit } = state;
-  const [myPosts, setMyPosts] = useState(
-    posts.slice((page - 1) * limit, (page - 1) * limit + limit)
-  );
+  const { state, setMyPosts } = useGlobalContext();
+  const { page, limit, myPosts } = state;
+  // const [myPosts, setMyPosts] = useState(
+  //   posts.slice((page - 1) * limit, (page - 1) * limit + limit)
+  // );
   const numOfPages = Math.ceil(posts.length / limit);
 
   useEffect(() => {

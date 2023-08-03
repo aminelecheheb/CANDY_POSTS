@@ -16,10 +16,11 @@ type StateType = {
 
 type ActionType = {
   type: string;
-  payload: any;
+  payload?: any;
 };
 
 type ContextType = {
   state: StateType;
   setPage: (page: number) => void;
+  setMyPosts: (posts: PostType[]) => void;
 };
