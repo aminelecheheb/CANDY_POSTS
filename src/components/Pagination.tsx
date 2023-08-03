@@ -1,27 +1,24 @@
-import React, { Dispatch, MutableRefObject, SetStateAction } from "react";
+import { useGlobalContext } from "@/context/appContext";
+import React from "react";
 
-const Pagination = (props: {
-  page: number;
-  setPage: Dispatch<SetStateAction<number>>;
-  numOfPages: number;
-}) => {
+const Pagination = (props: { numOfPages: number }) => {
+  const { state, setPage } = useGlobalContext();
+  const { page } = state;
   const handlePrevious = () => {
-    props.page > 1 && props.setPage(props.page - 1);
+    page > 1 && setPage(page - 1);
     window.scrollTo(0, 0);
   };
   const handleNext = () => {
-    props.page < props.numOfPages && props.setPage(props.page + 1);
+    page < props.numOfPages && setPage(page + 1);
     window.scrollTo(0, 0);
   };
   return (
     <div className="pagination_bar">
-      {props.page > 1 && <button onClick={handlePrevious}>Previous</button>}
+      {page > 1 && <button onClick={handlePrevious}>Previous</button>}
       <h3>
-        Page {props.page} Of {props.numOfPages}
+        Page {page} Of {props.numOfPages}
       </h3>
-      {props.page < props.numOfPages && (
-        <button onClick={handleNext}>Next</button>
-      )}
+      {page < props.numOfPages && <button onClick={handleNext}>Next</button>}
     </div>
   );
 };

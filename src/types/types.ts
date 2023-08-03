@@ -7,3 +7,19 @@ type PostType = {
   category: string;
   img: any;
 };
+
+type StateType = {
+  myPosts: PostType[];
+  page: number;
+  limit: number;
+};
+
+type ActionType = {
+  type: string;
+  payload: any;
+};
+
+type ContextType = {
+  state: StateType;
+  setPage: (page: number) => void;
+};

@@ -4,10 +4,11 @@ import { posts } from "@/data";
 import { useEffect, useState } from "react";
 import Post from "@/components/Post";
 import Pagination from "@/components/Pagination";
+import { useGlobalContext } from "@/context/appContext";
 
 export default function Home() {
-  const [page, setPage] = useState(1);
-  const limit = 4;
+  const { state } = useGlobalContext();
+  const { page, limit } = state;
   const [myPosts, setMyPosts] = useState(
     posts.slice((page - 1) * limit, (page - 1) * limit + limit)
   );
@@ -31,7 +32,7 @@ export default function Home() {
             return <Post key={post.id} post={post} />;
           })}
         </div>
-        <Pagination page={page} setPage={setPage} numOfPages={numOfPages} />
+        <Pagination numOfPages={numOfPages} />
       </main>
     </>
   );
