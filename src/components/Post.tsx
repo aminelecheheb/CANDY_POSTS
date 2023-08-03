@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 const Post = (props: { post: PostType }) => {
-  const { title, body, img, createdAt, category, markdown } = props.post;
+  const { title, body, img, createdAt, category } = props.post;
 
   let background_color = `${styles.background_color_4}`;
   if (category === "travel") {

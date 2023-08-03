@@ -10,7 +10,7 @@ const RecentPost = (props: { recentPost: PostType }) => {
         <Image src={img} alt="recent post" fill />
       </div>
       <div>
-        <h3>{title}</h3>
+        <h3>{title.slice(1, 40)}...</h3>
         <p>{createdAt}</p>
       </div>
     </div>

@@ -7,13 +7,14 @@ import Pagination from "@/components/Pagination";
 
 export default function Home() {
   const [page, setPage] = useState(1);
+  const limit = 4;
   const [myPosts, setMyPosts] = useState(
-    posts.slice((page - 1) * 4, (page - 1) * 4 + 4)
+    posts.slice((page - 1) * limit, (page - 1) * limit + limit)
   );
-  const numOfPages = Math.ceil(posts.length / 4);
+  const numOfPages = Math.ceil(posts.length / limit);
 
   useEffect(() => {
-    setMyPosts(posts.slice((page - 1) * 4, (page - 1) * 4 + 4));
+    setMyPosts(posts.slice((page - 1) * limit, (page - 1) * limit + limit));
   }, [page]);
 
   return (
