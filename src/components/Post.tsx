@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import Link from "next/link";
 
 const Post = (props: { post: PostType }) => {
-  const { title, body, img, createdAt, category } = props.post;
+  const { title, body, img, createdAt, category, id } = props.post;
 
   let background_color = `${styles.background_color_4}`;
   if (category === "travel") {
@@ -32,7 +32,9 @@ const Post = (props: { post: PostType }) => {
           <p>{body.slice(0, 200)}...</p>
         </div>
         <div className={styles.post_footer}>
-          <button>Continue reading</button>
+          <Link href={`/post/${id}`}>
+            <button>Continue reading</button>
+          </Link>
         </div>
       </div>
     </div>
