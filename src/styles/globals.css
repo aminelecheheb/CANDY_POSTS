@@ -47,6 +47,7 @@ body {
   background-color: var(--background-color);
   font-family: "Space Grotesk", sans-serif;
   color: var(--font-color);
+  overflow-x: hidden;
 }
 
 .container {
@@ -55,6 +56,13 @@ body {
   margin: 0 auto;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  display: block;
+  transition-duration: 300ms;
+}
+
+.ml {
+  transform: translateX(85vw);
+  transition-duration: 300ms;
 }
 
 .page-wrapper {

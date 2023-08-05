@@ -15,6 +15,9 @@
   list-style: none;
   gap: 3rem;
 }
+.links_container > * {
+  font-weight: 600;
+}
 .socials {
   display: flex;
   gap: 1rem;
@@ -93,6 +96,10 @@
   gap: 1rem;
   align-items: center;
 }
+.recent_post h3 {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
 .recent_img_container {
   position: relative;
   /* width: 100px; */
@@ -144,6 +151,23 @@
 .icon_container > * {
   font-size: 1.5rem;
 }
+.toggle {
+  display: none;
+}
+
+.nav_expand {
+  background-color: white;
+  position: absolute;
+  width: 85vw;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition-duration: 300ms;
+}
+.nav_hide {
+  transform: translateX(-100%);
+  transition-duration: 300ms;
+}
 
 @media screen and (max-width: 920px) {
   .sidebar {
@@ -168,7 +192,19 @@
 }
 
 @media screen and (max-width: 750px) {
+  .navbar {
+    flex-direction: row-reverse;
+    padding: 2rem 2rem;
+  }
   .sidebar {
     display: none;
+  }
+  .links_container,
+  .socials {
+    display: none;
+  }
+  .toggle {
+    display: block;
+    font-size: 1.7rem;
   }
 }

@@ -12,6 +12,7 @@ type StateType = {
   myPosts: PostType[];
   page: number;
   limit: number;
+  navToggle: boolean;
 };
 
 type ActionType = {
@@ -23,4 +24,5 @@ type ContextType = {
   state: StateType;
   setPage: (page: number) => void;
   setMyPosts: (posts: PostType[]) => void;
+  setNavToggle: () => void;
 };

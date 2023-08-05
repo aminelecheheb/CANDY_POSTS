@@ -117,9 +117,15 @@
   }
 }
 @media screen and (max-width: 750px) {
-  .post,
   .postPage {
     max-width: 450px;
     margin: 0 auto;
   }
+  /* .post {
+    align-items: center;
+  } */
+  /* .post_img_container {
+    max-width: 350px;
+    aspect-ratio: 4/3;
+  } */
 }

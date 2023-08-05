@@ -11,6 +11,12 @@ const reducer = (state: StateType, action: ActionType) => {
         myPosts: action.payload,
       };
 
+    case "SET_NAV_TOGGLE":
+      return {
+        ...state,
+        navToggle: !state.navToggle,
+      };
+
     default:
       return state;
   }
