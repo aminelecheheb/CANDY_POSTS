@@ -99,7 +99,12 @@
   background-color: var(--white);
   padding: 0.8rem 1.6rem;
   border-radius: 3rem;
-  transition-duration: 300ms;
+
+  /* transition-duration: 300ms; */
+}
+.post_footer button:hover {
+  border-top: 2px solid var(--font-color);
+  border-bottom: 2px solid var(--font-color);
 }
 
 .my {

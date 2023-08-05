@@ -6,6 +6,7 @@ import {
   FaLinkedinIn,
   FaInstagram,
 } from "react-icons/fa";
+import { socials } from "@/data";
 
 const FollowMe = () => {
   return (
@@ -15,25 +16,27 @@ const FollowMe = () => {
       </div>
       <div className={styles.account}>
         <div className={styles.icon_container}>
-          <FaFacebookF />
+          <FaFacebookF onClick={() => window.open(socials.fb, "_ blank")} />
         </div>
-        <h3>Facebook</h3>
+        <h3>Amine Lech</h3>
       </div>
       <div className={styles.account}>
         <div className={styles.icon_container}>
-          <FaInstagram />
+          <FaInstagram onClick={() => window.open(socials.insta, "_ blank")} />
         </div>
-        <h3>Instagram</h3>
+        <h3>_wr4th</h3>
       </div>
       <div className={styles.account}>
         <div className={styles.icon_container}>
-          <FaGithub />
+          <FaGithub onClick={() => window.open(socials.github, "_ blank")} />
         </div>
-        <h3>Github</h3>
+        <h3>aminelecheheb</h3>
       </div>
       <div className={styles.account}>
         <div className={styles.icon_container}>
-          <FaLinkedinIn />
+          <FaLinkedinIn
+            onClick={() => window.open(socials.linkedIn, "_ blank")}
+          />
         </div>
         <h3>LinkedIn</h3>
       </div>

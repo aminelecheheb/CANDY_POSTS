@@ -1,4 +1,9 @@
-import img from "../public/post.jpg";
+export const socials = {
+  github: "https://github.com/aminelecheheb",
+  fb: "https://www.facebook.com/wrath4/",
+  insta: "https://www.instagram.com/",
+  linkedIn: "https://www.linkedin.com/",
+};
 
 export const posts = [
   {

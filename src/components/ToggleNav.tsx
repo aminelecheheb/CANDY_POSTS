@@ -5,6 +5,7 @@ import About from "./About";
 import RecentPosts from "./RecentPosts";
 import FollowMe from "./FollowMe";
 import { MdClose } from "react-icons/md";
+import Link from "next/link";
 
 const ToggleNav = () => {
   const { state, setNavToggle } = useGlobalContext();
@@ -19,9 +20,11 @@ const ToggleNav = () => {
     <div className={`${styles.nav_base} ${navToggle && styles.nav_expand}`}>
       <MdClose className={styles.close_icon} onClick={setNavToggle} />
       <ul className={styles.nav_toggle_links}>
-        <li>Articles</li>
-        <li>Categories</li>
-        <li>Contact</li>
+        <li>
+          <Link href={"/"}>Articles</Link>
+        </li>
+        <li className="disabled">Categories</li>
+        <li className="disabled">Contact</li>
       </ul>
       <About />
       <RecentPosts recentPosts={recentPosts} />
