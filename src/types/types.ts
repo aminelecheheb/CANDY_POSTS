@@ -13,6 +13,7 @@ type StateType = {
   page: number;
   limit: number;
   navToggle: boolean;
+  recentPosts: PostType[];
 };
 
 type ActionType = {

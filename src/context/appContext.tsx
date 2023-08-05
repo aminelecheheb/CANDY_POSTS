@@ -7,6 +7,7 @@ const initialState = {
   page: 1,
   limit: 4,
   navToggle: false,
+  recentPosts: posts.slice(0, 3),
 };
 
 const AppContext = React.createContext<ContextType>({

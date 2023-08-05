@@ -60,11 +60,6 @@ body {
   transition-duration: 300ms;
 }
 
-.ml {
-  transform: translateX(85vw);
-  transition-duration: 300ms;
-}
-
 .page-wrapper {
   display: flex;
   gap: 2rem;
@@ -107,5 +102,15 @@ button {
   }
   .page-wrapper {
     gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .ml {
+    transform: translateX(85vw);
+    transition-duration: 300ms;
+  }
+  .overflow_hidden {
+    overflow-y: hidden;
   }
 }
